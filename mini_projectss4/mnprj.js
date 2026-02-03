@@ -72,7 +72,7 @@ if (flag === true) {
                     if (isNaN(row) || isNaN(column) || row < 1 || column < 1) {
                         alert("Số hàng hoặc cột phải là số dương");
                     }
-                } while (row < 1 || column < 1);
+                } while (isNaN(row) || isNaN(column) || row < 1 || column < 1);
 
                 for (let i = 1; i <= row; i++) {
                     for (let j = 1; j <= column; j++) {
@@ -123,6 +123,7 @@ if (flag === true) {
         }
     } while (choice !== 5);
 }
+
 
 
 
