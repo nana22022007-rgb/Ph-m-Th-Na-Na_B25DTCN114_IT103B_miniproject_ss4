@@ -43,30 +43,33 @@ if (flag === true) {
                 let count = 0;
                 let even = 0;
                 let odd = 0;
-                let code = parseInt(prompt("Nhập mã số sách(nhập số 0 để dừng)"));
-                if (code === 0) {
-                    break;
+
+                while (true) {
+                    let code = parseInt(prompt("Nhập mã số sách (nhập 0 để dừng)"));
+                    if (code === 0) {
+                        break;
+                    }
+                    count++;
+                    if (code % 2 === 0) {
+                        even++;
+                    } else {
+                        odd++;
+                    }
                 }
-                count++;
-                if (code % 2 === 0) {
-                    even++;
-                } else {
-                    odd++;
-                }
+
                 console.log("--- Kết quả phân loại mã sách ---");
-                console.log("Tổng số lượng mã sách đã nhập:",count);
+                console.log("Tổng số lượng mã sách đã nhập:", count);
                 console.log("Số mã chẵn (Sách khoa học):", even);
-                console.log("Số mã lẻ (Sách nghệ thuật)",odd);
+                console.log("Số mã lẻ (Sách nghệ thuật):", odd);
                 alert("Đã phân loại xong! Xem kết quả tại Console (F12).");
 
-                break;
             case 2:
                 let row;
                 let column;
                 do {
                     row = parseInt(prompt("Nhập số hàng"));
                     column = parseInt(prompt("Nhập số cột"));
-                    if (row < 1 || column < 1) {
+                    if (isNaN(row) || isNaN(column) || row < 1 || column < 1) {
                         alert("Số hàng hoặc cột phải là số dương");
                     }
                 } while (row < 1 || column < 1);
